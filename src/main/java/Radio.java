@@ -1,6 +1,15 @@
 public class Radio {
     private int currentRadNubmer;
     private int currentVolume;
+    private final int quantityofRads;
+
+    public Radio() {
+        quantityofRads = 10;
+    }
+
+    public Radio(int newcurrentRadNubmer) {
+        quantityofRads = newcurrentRadNubmer;
+    }
 
     public int getCurrentRadNubmer() {
         return currentRadNubmer;
@@ -24,14 +33,14 @@ public class Radio {
         if (newcurrentRadNubmer < 0) {
             return;
         }
-        if (newcurrentRadNubmer > 9) {
+        if (newcurrentRadNubmer > quantityofRads - 1) {
             return;
         }
         currentRadNubmer = newcurrentRadNubmer;
     }
 
     public void next() {
-        if (currentRadNubmer < 9) {
+        if (currentRadNubmer < quantityofRads - 1) {
             currentRadNubmer = currentRadNubmer + 1;
         } else {
             currentRadNubmer = 0;
@@ -42,7 +51,7 @@ public class Radio {
         if (currentRadNubmer > 0) {
             currentRadNubmer = currentRadNubmer - 1;
         } else {
-            currentRadNubmer = 9;
+            currentRadNubmer = quantityofRads - 1;
         }
     }
 

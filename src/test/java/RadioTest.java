@@ -127,4 +127,15 @@ public class RadioTest {
         actual = radTest.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void newRadnumberTest() {
+        
+        int expected = 15;
+        Radio radTest = new Radio(16);
+
+        radTest.setcurrentRadNubmer(15);
+        int actual = radTest.getCurrentRadNubmer();
+        Assertions.assertEquals(expected, actual);
+    }
 }
